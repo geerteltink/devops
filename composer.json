@@ -15,13 +15,14 @@
         }
     ],
     "require": {
+        "php": "^7.1",
         "beberlei/assert": "^3.2",
-        "ocramius/package-versions": "^1.5",
-        "symfony/console": "^4.3",
-        "symfony/process": "^4.3"
+        "ocramius/package-versions": "^1.3",
+        "symfony/console": "^4.0",
+        "symfony/process": "^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.4",
+        "phpunit/phpunit": "^7.0 || ^8.0",
         "zendframework/zend-coding-standard": "dev-feature/psr-12"
     },
     "config": {
