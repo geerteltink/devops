@@ -28,5 +28,6 @@ $application->addCommands([
     new Git\SetUpstreamCommand('upstream:set'),
     new Git\SyncUpstreamCommand('upstream:sync'),
     new Git\CheckoutPullRequestCommand('pr:checkout'),
+    new Git\MergePullRequestCommand('pr:merge'),
 ]);
 $application->run();
