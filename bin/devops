@@ -27,5 +27,6 @@ $application = new Application('devops', $version);
 $application->addCommands([
     new Git\SetUpstreamCommand('upstream:set'),
     new Git\SyncUpstreamCommand('upstream:sync'),
+    new Git\CheckoutPullRequestCommand('pr:checkout'),
 ]);
 $application->run();
