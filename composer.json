@@ -21,7 +21,8 @@
         "symfony/process": "^4.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.4"
+        "phpunit/phpunit": "^8.4",
+        "zendframework/zend-coding-standard": "dev-feature/psr-12"
     },
     "config": {
         "sort-packages": true
@@ -41,9 +42,25 @@
             "IswaiTest\\DevOps\\": "test/"
         }
     },
+    "repositories": {
+        "zend-coding-standard": {
+            "type": "vcs",
+            "url": "git@github.com:geerteltink/zend-coding-standard.git"
+        }
+    },
     "bin": [
         "bin/devops"
     ],
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs -p",
+        "cs-fix": "phpcbf -p",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    },
     "support": {
         "issues": "https://github.com/iswai/devops/issues",
         "source": "https://github.com/iswai/devops",
