@@ -1,0 +1,44 @@
+{
+    "name": "iswai/devops",
+    "type": "project",
+    "description": "DevOps commands to make your life easier.",
+    "keywords": [
+        "DevOps",
+        "GitHub",
+        "pull requests"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Geert Eltink",
+            "email": "geert.eltink@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^4.3",
+        "ocramius/package-versions": "^1.5",
+        "beberlei/assert": "^3.2",
+        "symfony/process": "^4.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Iswai\\DevOps\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IswaiTest\\DevOps\\": "test/"
+        }
+    },
+    "bin": [
+        "bin/devops"
+    ],
+    "support": {
+        "issues": "https://github.com/iswai/devops/issues",
+        "source": "https://github.com/iswai/devops",
+        "rss": "https://github.com/phly/iswai/devops/releases.atom"
+    }
+}
