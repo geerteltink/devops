@@ -26,5 +26,6 @@ $version = strstr(Versions::getVersion('iswai/devops'), '@', true);
 $application = new Application('devops', $version);
 $application->addCommands([
     new Git\SetUpstreamCommand('upstream:set'),
+    new Git\SyncUpstreamCommand('upstream:sync'),
 ]);
 $application->run();
