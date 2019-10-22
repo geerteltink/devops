@@ -9,8 +9,13 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+
+use function array_filter;
+use function explode;
+use function sprintf;
+use function strpos;
 
 class SetUpstreamCommand extends Command
 {
@@ -41,7 +46,7 @@ class SetUpstreamCommand extends Command
 
         try {
             $getRemotes = new Process(['git', 'remote', '-v']);
-            $remotes = array_filter(explode("\n", $getRemotes->mustRun()->getOutput()));
+            $remotes    = array_filter(explode("\n", $getRemotes->mustRun()->getOutput()));
 
             $hasUpstream = false;
             foreach ($remotes as $remote) {

@@ -7,11 +7,12 @@ namespace Iswai\DevOps\Git;
 use Assert\Assertion;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+
+use function sprintf;
 
 class CheckoutPullRequestCommand extends Command
 {
@@ -39,7 +40,7 @@ class CheckoutPullRequestCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
-        $pr = (int) $input->getArgument('pr');
+        $pr   = (int) $input->getArgument('pr');
         $type = $input->getArgument('type');
 
         Assertion::inArray($type, ['hotfix', 'feature']);
@@ -69,28 +70,28 @@ class CheckoutPullRequestCommand extends Command
             $output->writeln([
                 '',
                 sprintf('<comment>Run checks and commands</comment>'),
-                sprintf('<comment> - $ composer check<comment>')
+                sprintf('<comment> - $ composer check<comment>'),
             ]);
 
             if ($type === 'hotfix') {
                 $output->writeln([
-                    sprintf('<comment> - $ keep-a-changelog entry:fixed --pr %d "fixes something to be Better."</comment>', $pr)
+                    sprintf('<comment> - $ keep-a-changelog entry:fixed --pr %d "fixes ..."</comment>', $pr),
                 ]);
             }
 
             if ($type === 'feature') {
                 $output->writeln([
-                    sprintf('<comment> - $ keep-a-changelog entry:added --pr %d "adds documentation."</comment>', $pr),
-                    sprintf('<comment> - $ keep-a-changelog entry:changed --pr %d "changes something."</comment>', $pr),
-                    sprintf('<comment> - $ keep-a-changelog entry:deprecated --pr %d "deprecated something to be removed in the next major release."</comment>', $pr),
-                    sprintf('<comment> - $ keep-a-changelog entry:removed --pr %d "removes something."</comment>', $pr)
+                    sprintf('<comment> - $ keep-a-changelog entry:added --pr %d "adds ..."</comment>', $pr),
+                    sprintf('<comment> - $ keep-a-changelog entry:changed --pr %d "changes ..."</comment>', $pr),
+                    sprintf('<comment> - $ keep-a-changelog entry:deprecated --pr %d "deprecated ..."</comment>', $pr),
+                    sprintf('<comment> - $ keep-a-changelog entry:removed --pr %d "removes ..."</comment>', $pr),
                 ]);
             }
 
             $output->writeln([
                 '',
                 sprintf('<comment>Once ready merge the pull request</comment>'),
-                sprintf('<comment> - $ devops pr:merge<comment>')
+                sprintf('<comment> - $ devops pr:merge<comment>'),
             ]);
         } catch (ProcessFailedException $exception) {
             $output->writeln(sprintf('<error>%s</error>', $exception->getMessage()));

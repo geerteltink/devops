@@ -6,12 +6,14 @@ namespace Iswai\DevOps\Git;
 
 use Assert\Assertion;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+
+use function explode;
+use function sprintf;
+use function trim;
 
 class MergePullRequestCommand extends Command
 {
@@ -46,7 +48,14 @@ class MergePullRequestCommand extends Command
 
             // check if develop branch exists
             // git ls-remote --exit-code --heads upstream develop
-            $hasDevelopBranch = (new Process(['git', 'ls-remote', '--exit-code', '--heads', 'upstream', 'develop']))->run() === 0;
+            $hasDevelopBranch = (new Process([
+                'git',
+                'ls-remote',
+                '--exit-code',
+                '--heads',
+                'upstream',
+                'develop',
+            ]))->run() === 0;
             if ($hasDevelopBranch) {
                 $output->writeln("<info>Develop branch detected</info>");
             }
@@ -82,14 +91,29 @@ class MergePullRequestCommand extends Command
         }
     }
 
-    private function merge(OutputInterface $output, $prBranch, $pr, $type, $targetBranch, $action): void
-    {
+    private function merge(
+        OutputInterface $output,
+        string $prBranch,
+        int $pr,
+        string $type,
+        string $targetBranch,
+        string $action
+    ): void {
         // git checkout develop
         $output->writeln("<info>Checking out $targetBranch...</info>");
         (new Process(['git', 'checkout', $targetBranch]))->mustRun();
 
         // git merge --no-ff hotfix/1 -m "merge: hotfix #1" -m "Forward port #1"
         $output->writeln("<info>Merging $prBranch into $targetBranch...</info>");
-        (new Process(['git', 'merge', '--no-ff', $prBranch, '-m', "merge: $type #$pr", '-m', "$action #$pr"]))->mustRun();
+        (new Process([
+            'git',
+            'merge',
+            '--no-ff',
+            $prBranch,
+            '-m',
+            "merge: $type #$pr",
+            '-m',
+            "$action #$pr",
+        ]))->mustRun();
     }
 }

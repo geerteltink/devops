@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Iswai\DevOps\Git;
 
-use Assert\Assertion;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+
+use function sprintf;
 
 class SyncUpstreamCommand extends Command
 {
@@ -46,7 +47,9 @@ class SyncUpstreamCommand extends Command
 
             // check if develop branch exists
             // git ls-remote --exit-code --heads upstream develop
-            $hasDevelopBranch = (new Process(['git', 'ls-remote', '--exit-code', '--heads', 'upstream', 'develop']))->run();
+            $hasDevelopBranch = (new Process(['git', 'ls-remote', '--exit-code', '--heads', 'upstream', 'develop']))
+                ->run();
+
             if ($hasDevelopBranch !== 0) {
                 return;
             }
@@ -58,7 +61,7 @@ class SyncUpstreamCommand extends Command
         }
     }
 
-    private function syncBranch(OutputInterface $output, string $branch, bool $pushToOrigin) : void
+    private function syncBranch(OutputInterface $output, string $branch, bool $pushToOrigin): void
     {
         // git checkout <branch>
         $output->writeln("<info>Checking out $branch...</info>");
