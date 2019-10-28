@@ -63,7 +63,7 @@ devops pr:checkout hotfix 1
 devops pr:checkout feature 1
 ```
 
-Behind the scenes this will create a new branch (`hotfix\1` or `feature\1`)
+Behind the scenes this will create a new branch (`hotfix/1` or `feature/1`)
 depending on the pull request you chose. After that it will fetch the pull 
 request data and merge it into the created new branch with the message: 
 `"merge: pull request #1"`.
@@ -87,7 +87,7 @@ devops pr:merge
 
 This is a very short command but there is a lot more to it. First it detects
 the pull request type and number. Makes sure you are on the correct local
-branch you created in step 3, e.g. `hotfix\1` or `feature\1`.
+branch you created in step 3, e.g. `hotfix/1` or `feature/1`.
 
 Hotfixes are merged into the master and develop branch. Merged into the master
 branch a `Close #<pr>` comment is added to the commit. Merging a hotfix into 
