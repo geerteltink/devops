@@ -1,5 +1,5 @@
 organization: iswai
-project: iswai-devops
+project: devops
 current: "1.0"
 develop: "1.1.x-dev"
 versions:

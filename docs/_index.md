@@ -1,5 +1,5 @@
 ---
-title: iswai-devops
+title: DevOps
 ---
 
 The `devops` cli is created for maintainers. Are you repeatedly typing git 
