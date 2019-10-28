@@ -30,3 +30,8 @@ jobs:
           git add --all
           git commit --allow-empty -m "docs: deploy from ${GITHUB_SHA}"
           git push origin gh-pages
+          curl --silent --show-error --fail \
+            -X POST "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds" \
+            -H "Authorization: token ${GITHUB_TOKEN}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -H "Accept: application/vnd.github.v3+json"
