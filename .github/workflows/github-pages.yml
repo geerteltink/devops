@@ -12,6 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      - name: Prepare
+        run: |
+          rm -rf build
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git worktree add build gh-pages
+
       - name: Build
         uses: docker://iswai/iswai-docs:latest
         with:
@@ -20,12 +27,6 @@ jobs:
       - name: Deploy
         run: |
           cd build
-          chown -R $USER:$USER *
-          git init
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add --all
           git commit --allow-empty -m "docs: deploy from ${GITHUB_SHA}"
-          git remote add pages "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push pages gh-pages --force
-          rm -rf .git
+          git push origin gh-pages
