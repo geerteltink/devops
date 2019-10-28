@@ -26,5 +26,5 @@ jobs:
           git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add --all
           git commit --allow-empty -m "docs: deploy from ${GITHUB_SHA}"
-          git push origin gh-pages
+          git push --force origin gh-pages
           rm -rf .git
