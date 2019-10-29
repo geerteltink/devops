@@ -13,15 +13,13 @@ jobs:
         uses: actions/checkout@master
 
       - name: Build
-        uses: docker://iswai/iswai-docs:latest
+        uses: docker://iswai/docs:latest
         with:
           args: 'build'
 
       - name: Deploy
         env:
-          PERSONAL_TOKEN: ${{ secrets.ISWAI_BOT }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./build
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.ISWAI_BOT }}
         run: |
-          wget https://raw.githubusercontent.com/peaceiris/actions-gh-pages/v2.5.1/entrypoint.sh
-          bash ./entrypoint.sh
+          wget https://raw.githubusercontent.com/iswai/docs-sdk/master/actions/deploy-gh-pages
+          bash ./deploy-gh-pages
