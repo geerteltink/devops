@@ -22,9 +22,6 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.ISWAI_BOT }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./build
-          SCRIPT_MODE: true
-        with:
-          emptyCommits: false
         run: |
-          wget https://raw.githubusercontent.com/peaceiris/actions-gh-pages/v2.5.0/entrypoint.sh
+          wget https://raw.githubusercontent.com/peaceiris/actions-gh-pages/v2.5.1/entrypoint.sh
           bash ./entrypoint.sh
