@@ -23,5 +23,5 @@ jobs:
 
     - name: Deploy
       env:
-        PERSONAL_ACCESS_TOKEN: ${{ secrets.YOUR_SECRET_PAT }}
+        PERSONAL_ACCESS_TOKEN: ${{ secrets.ISWAI_BOT }}
       run: wget -O - https://raw.githubusercontent.com/iswai/docs-sdk/master/actions/gh-pages-deploy | bash
