@@ -10,26 +10,18 @@ what this tool does for you. All you need to remember are a handful of commands 
 for you. It's based on the Zend Framework maintainers workflow so be sure to check out if it works for your workflow
 as well.
 
-## Bugs and feature requests
+## Documentation
 
-Have a bug or a feature request? Please first read the
-[issue guidelines](https://github.com/iswai/.github/blob/master/CONTRIBUTING.md#using-the-issue-tracker)
-and search for existing and closed issues. If your problem or idea is not addressed yet, please open
-a new issue.
+All project documentation is located in the [./docs](./docs) folder. If you would like to contribute
+to the documentation, please submit a pull request.
 
 ## Contributing
 
-Please read through our [contributing guidelines](https://github.com/iswai/.github/blob/master/CONTRIBUTING.md#contributing).
-Included are directions for submitting pull requests, coding standards, and notes on development.
-
-## Documentation
-
-Documentation, included in this repo in the [docs](./docs) directory, is
-built with [iswai/docs-sdk](https://iswai.github.io/docs-sdk/) and publicly hosted on GitHub Pages at
-<https://iswai.github.io/>.
+***BEFORE you start work on a feature or fix***, please read & follow the
+[contributing guidelines](https://github.com/iswai/.github/blob/master/CONTRIBUTING.md#contributing)
+to help avoid any wasted or duplicate effort.
 
 ## Copyright and license
 
-© 2019 [Geert Eltink](https://www.elt.ink/) |
-Code released under [MIT License](https://github.com/iswai/.github/blob/master/LICENSE.md). |
+Code released under the [MIT License](https://github.com/iswai/.github/blob/master/LICENSE.md).
 Documentation distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
