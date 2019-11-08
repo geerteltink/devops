@@ -19,7 +19,7 @@ composer global require iswai/devops:1.0.x-dev
 
 ## Getting started
 
-You need to export your forked project first:
+You need to clone your forked project first:
 
 ```bash
 git clone git@github.com:<your_username>/<project>.git
