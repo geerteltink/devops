@@ -1,9 +1,9 @@
 ---
-title: "Getting started"
-type: "project"
-layout: "page"
-project: "devops"
-version: "1.0"
+title: Getting started
+type: project
+layout: page
+project: devops
+version: v1
 ---
 
 Are you repeatedly typing git commands to merge pull requests? This tool makes

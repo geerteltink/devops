@@ -1,8 +1,8 @@
 ---
-title: "xtreamwayz/devops"
-type: "project"
-layout: "landingpage"
-project: "devops"
+title: xtreamwayz/devops
+type: project
+layout: landingpage
+project: devops
 ---
 
 Are you repeatedly typing git commands to merge pull requests? This tool makes

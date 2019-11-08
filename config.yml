@@ -1,6 +1,6 @@
 params:
   devops:
-    name: "devops"
-    latest: "1.0"
-    develop:
+    name: devops
+    latest: v1
     versions:
+      - v1
