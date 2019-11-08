@@ -1,3 +1,3 @@
-module github.com/iswai/devops
+module github.com/xtreamwayz/devops
 
 go 1.13

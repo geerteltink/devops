@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace IswaiTest\DevOps\Git;
+namespace XtreamwayzTest\DevOps\Git;
 
-use Iswai\DevOps\Git\CheckoutPullRequestCommand;
+use Xtreamwayz\DevOps\Git\CheckoutPullRequestCommand;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Tester\CommandTester;

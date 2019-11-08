@@ -1,5 +1,5 @@
 {
-    "name": "iswai/devops",
+    "name": "xtreamwayz/devops",
     "type": "project",
     "description": "DevOps commands to make your life easier.",
     "keywords": [
@@ -35,12 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Iswai\\DevOps\\": "src/"
+            "Xtreamwayz\\DevOps\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IswaiTest\\DevOps\\": "test/"
+            "XtreamwayzTest\\DevOps\\": "test/"
         }
     },
     "repositories": {
@@ -63,8 +63,8 @@
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     },
     "support": {
-        "issues": "https://github.com/iswai/devops/issues",
-        "source": "https://github.com/iswai/devops",
-        "rss": "https://github.com/phly/iswai/devops/releases.atom"
+        "issues": "https://github.com/xtreamwayz/devops/issues",
+        "source": "https://github.com/xtreamwayz/devops",
+        "rss": "https://github.com/phly/xtreamwayz/devops/releases.atom"
     }
 }

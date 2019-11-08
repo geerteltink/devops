@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iswai\DevOps\Git;
+namespace Xtreamwayz\DevOps\Git;
 
 use Assert\Assertion;
 use Symfony\Component\Console\Command\Command;

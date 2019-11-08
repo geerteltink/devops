@@ -14,7 +14,7 @@ to check out if it works for your workflow as well.
 ## Installation
 
 ```bash
-composer global require iswai/devops:1.0.x-dev
+composer global require xtreamwayz/devops:1.0.x-dev
 ```
 
 ## Getting started

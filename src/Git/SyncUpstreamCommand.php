@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Iswai\DevOps\Git;
+namespace Xtreamwayz\DevOps\Git;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
