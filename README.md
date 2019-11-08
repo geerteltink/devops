@@ -1,6 +1,6 @@
 # DevOps
 
-[![Docs Status](https://github.com/iswai/devops/workflows/github-pages/badge.svg)](https://github.com/iswai/devops/actions)
+[![Docs Status](https://github.com/iswai/devops/workflows/build-docs/badge.svg)](https://github.com/iswai/devops/actions)
 [![Build Status](https://github.com/iswai/devops/workflows/qa-tests/badge.svg)](https://github.com/iswai/devops/actions)
 [![Downloads](https://img.shields.io/packagist/dt/iswai/devops.svg)](https://packagist.org/packages/iswai/devops)
 [![Packagist](https://img.shields.io/packagist/v/iswai/devops.svg)](https://packagist.org/packages/iswai/devops)
@@ -13,7 +13,8 @@ as well.
 ## Documentation
 
 All project documentation is located in the [./docs](./docs) folder. If you would like to contribute
-to the documentation, please submit a pull request.
+to the documentation, please submit a pull request. You can read the docs online:
+https://iswai.netlify.com/devops/
 
 ## Contributing
 
